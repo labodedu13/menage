@@ -1,0 +1,89 @@
+/* Réinitialisation de base pour éviter les marges par défaut du navigateur */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #2c3e50;
+    line-height: 1.6;
+}
+
+/* En-tête de la page */
+header {
+    background-color: #4a90a4;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* Contenu principal */
+main {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.taches h2 {
+    margin-bottom: 15px;
+    color: #34495e;
+    border-bottom: 2px solid #4a90a4;
+    padding-bottom: 8px;
+}
+
+/* Liste des tâches */
+.liste-taches {
+    list-style: none;
+}
+
+.tache {
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tache:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.nom-tache {
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+
+.piece {
+    background-color: #e8f1f3;
+    color: #4a90a4;
+    font-size: 0.85rem;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+/* Pied de page */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
