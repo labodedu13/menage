@@ -5,16 +5,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mes Tâches Ménagères</title>
+
+  <!-- Le fichier de style est chargé ici : il gère toutes les couleurs, tailles, espacements -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+  <!-- ============================================ -->
+  <!-- EN-TÊTE : bandeau du haut, purement visuel   -->
+  <!-- ============================================ -->
   <header>
     <h1>Appart clean pour ma Queen</h1>
     <p>Coche une tâche une fois faite. Un mail de rappel sera envoyé automatiquement.</p>
   </header>
 
+  <!-- ============================================ -->
+  <!-- CONTENU PRINCIPAL                             -->
+  <!-- Le <ul id="liste-taches"> est vide au départ. -->
+  <!-- C'est app.js qui va le remplir dynamiquement  -->
+  <!-- avec les tâches récupérées depuis Google.     -->
+  <!-- ============================================ -->
   <main>
     <section class="taches">
       <h2>Faire les tâches pour éviter les coups de cravache</h2>
@@ -28,7 +39,8 @@
     <p>Créé avec ❤️ pour un foyer bien rangé</p>
   </footer>
 
-  <script src="APP.js"></script>
+  <!-- Le script est chargé en dernier, une fois que le HTML au-dessus existe déjà -->
+  <script src="app.js"></script>
 </body>
 
 </html>

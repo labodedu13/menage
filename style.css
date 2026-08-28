@@ -1,3 +1,8 @@
+/* ============================================
+   RÉINITIALISATION DE BASE
+   Annule les marges/paddings par défaut du navigateur
+   pour avoir un rendu identique partout.
+   ============================================ */
 * {
     margin: 0;
     padding: 0;
@@ -7,16 +12,22 @@
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
     background-color: #faf3ea;
+    /* fond crème chaud pour toute la page */
     color: #4a3f35;
     line-height: 1.6;
 }
 
+/* ============================================
+   EN-TÊTE (bandeau du haut)
+   ============================================ */
 header {
     background: linear-gradient(135deg, #d98a6b, #e8a87c 60%, #f0c48a);
+    /* dégradé terracotta -> pêche */
     color: #fff8f0;
     text-align: center;
     padding: 50px 20px 40px;
     border-bottom-left-radius: 30px;
+    /* coins arrondis pour un effet "cosy" */
     border-bottom-right-radius: 30px;
     box-shadow: 0 4px 14px rgba(180, 110, 70, 0.25);
 }
@@ -32,9 +43,13 @@ header p {
     opacity: 0.95;
 }
 
+/* ============================================
+   ZONE PRINCIPALE
+   ============================================ */
 main {
     max-width: 700px;
     margin: 30px auto;
+    /* centre le contenu horizontalement */
     padding: 0 20px;
 }
 
@@ -45,6 +60,8 @@ main {
     padding-bottom: 8px;
 }
 
+/* Conteneur de la liste : fond légèrement différent des cartes,
+   donne un effet "plateau" sur lequel reposent les tâches */
 .liste-taches {
     list-style: none;
     background-color: #fff9f2;
@@ -63,32 +80,25 @@ main {
     color: #c0392b;
 }
 
+/* ============================================
+   CARTE D'UNE TÂCHE
+   Structure en ligne (flex) : [PHOTO] [CONTENU]
+   La photo prend toute la hauteur de la carte
+   grâce à "align-items: stretch".
+   ============================================ */
 .tache {
     background-color: #ffffff;
     border-radius: 10px;
     padding: 0;
+    /* le padding est géré par .tache-corps, pas ici, car la photo doit toucher les bords */
     margin-bottom: 12px;
     box-shadow: 0 2px 6px rgba(180, 140, 100, 0.12);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     display: flex;
     align-items: stretch;
+    /* étire les enfants (dont la photo) sur toute la hauteur de la carte */
     overflow: hidden;
-}
-
-.tache-photo {
-    width: 90px;
-    min-width: 90px;
-    height: auto;
-    object-fit: cover;
-}
-
-.tache-corps {
-    flex: 1;
-    padding: 15px 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    min-width: 0;
+    /* pour que la photo respecte les coins arrondis de la carte */
 }
 
 .tache:last-child {
@@ -97,14 +107,37 @@ main {
 
 .tache:hover {
     transform: translateY(-2px);
+    /* petit effet de soulèvement au survol */
     box-shadow: 0 5px 14px rgba(180, 140, 100, 0.2);
 }
 
+/* Photo à gauche de chaque tâche.
+   object-fit: cover = la photo remplit tout l'espace sans se déformer,
+   quitte à en couper les bords si le ratio ne correspond pas exactement. */
+.tache-photo {
+    width: 90px;
+    min-width: 90px;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Contenu texte de la tâche, à droite de la photo */
+.tache-corps {
+    flex: 1;
+    /* prend tout l'espace restant */
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 0;
+    /* évite que le texte long ne fasse déborder la carte */
+}
+
+/* Ligne du haut : case à cocher + nom de la tâche + pièce */
 .tache-principal {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 10px;
 }
 
 .case-validation {
@@ -112,6 +145,7 @@ main {
     height: 20px;
     cursor: pointer;
     accent-color: #d98a6b;
+    /* couleur de la case cochée, assortie au thème */
 }
 
 .tache-infos {
@@ -130,6 +164,7 @@ main {
     color: #a08b78;
 }
 
+/* Ligne du bas : badge de statut + réglage de l'intervalle */
 .tache-details {
     display: flex;
     justify-content: space-between;
@@ -138,6 +173,8 @@ main {
     gap: 10px;
 }
 
+/* Badge de statut : la couleur change selon la classe ajoutée en JS
+   (a-jour / en-retard / jamais-faite), voir app.js */
 .statut {
     font-size: 0.85rem;
     padding: 4px 12px;
@@ -148,18 +185,22 @@ main {
 .statut.a-jour {
     background-color: #eaf5ea;
     color: #4f8c5f;
+    /* vert : tout va bien */
 }
 
 .statut.en-retard {
     background-color: #fbe6e1;
     color: #c0603f;
+    /* rouge/orangé : action nécessaire */
 }
 
 .statut.jamais-faite {
     background-color: #fbeed9;
     color: #c9902f;
+    /* jaune/orange : jamais encore validée */
 }
 
+/* Champ pour modifier l'intervalle en jours, propre à chaque tâche */
 .intervalle-label {
     font-size: 0.85rem;
     color: #a08b78;
