@@ -1,42 +1,25 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mes Tâches Ménagères</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <header>
     <h1>🏠 Mes Tâches Ménagères</h1>
-    <p>Organise et suis tes tâches de la semaine</p>
+    <p>Coche une tâche une fois faite. Un mail de rappel sera envoyé automatiquement.</p>
   </header>
 
   <main>
     <section class="taches">
-      <h2>À faire</h2>
-      <ul class="liste-taches">
-        <li class="tache">
-          <span class="nom-tache">Passer l'aspirateur</span>
-          <span class="piece">Salon</span>
-        </li>
-        <li class="tache">
-          <span class="nom-tache">Faire la vaisselle</span>
-          <span class="piece">Cuisine</span>
-        </li>
-        <li class="tache">
-          <span class="nom-tache">Nettoyer la salle de bain</span>
-          <span class="piece">Salle de bain</span>
-        </li>
-        <li class="tache">
-          <span class="nom-tache">Faire la lessive</span>
-          <span class="piece">Buanderie</span>
-        </li>
-        <li class="tache">
-          <span class="nom-tache">Ranger la chambre</span>
-          <span class="piece">Chambre</span>
-        </li>
+      <h2>Liste des tâches</h2>
+      <ul class="liste-taches" id="liste-taches">
+        <li class="chargement">Chargement des tâches...</li>
       </ul>
     </section>
   </main>
@@ -45,5 +28,7 @@
     <p>Créé avec ❤️ pour un foyer bien rangé</p>
   </footer>
 
+  <script src="APP.js"></script>
 </body>
+
 </html>

@@ -1,4 +1,3 @@
-/* Réinitialisation de base pour éviter les marges par défaut du navigateur */
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +11,6 @@ body {
     line-height: 1.6;
 }
 
-/* En-tête de la page */
 header {
     background-color: #4a90a4;
     color: white;
@@ -30,7 +28,6 @@ header p {
     opacity: 0.9;
 }
 
-/* Contenu principal */
 main {
     max-width: 700px;
     margin: 30px auto;
@@ -44,9 +41,18 @@ main {
     padding-bottom: 8px;
 }
 
-/* Liste des tâches */
 .liste-taches {
     list-style: none;
+}
+
+.chargement,
+.erreur {
+    color: #7f8c8d;
+    padding: 15px 0;
+}
+
+.erreur {
+    color: #c0392b;
 }
 
 .tache {
@@ -54,9 +60,6 @@ main {
     border-radius: 8px;
     padding: 15px 20px;
     margin-bottom: 12px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -66,21 +69,83 @@ main {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
 }
 
+.tache-principal {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.case-validation {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #4a90a4;
+}
+
+.tache-infos {
+    display: flex;
+    flex-direction: column;
+}
+
 .nom-tache {
     font-weight: 600;
     font-size: 1.05rem;
 }
 
 .piece {
-    background-color: #e8f1f3;
-    color: #4a90a4;
+    font-size: 0.85rem;
+    color: #7f8c8d;
+}
+
+.tache-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-left: 32px;
+}
+
+.statut {
     font-size: 0.85rem;
     padding: 4px 12px;
     border-radius: 20px;
     font-weight: 500;
 }
 
-/* Pied de page */
+.statut.a-jour {
+    background-color: #e6f7ed;
+    color: #27ae60;
+}
+
+.statut.en-retard {
+    background-color: #fdecea;
+    color: #c0392b;
+}
+
+.statut.jamais-faite {
+    background-color: #fef5e7;
+    color: #d68910;
+}
+
+.intervalle-label {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.intervalle-input {
+    width: 55px;
+    padding: 4px 6px;
+    border: 1px solid #dcdfe3;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
 footer {
     text-align: center;
     padding: 20px;
