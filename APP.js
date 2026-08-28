@@ -1,7 +1,7 @@
 // ⚠️ Remplace cette URL par celle obtenue après le déploiement de ton Apps Script
 const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz4kkwm7JSmpHHlMdqKSE6EPM0CeHft7uxWLC-u12oYMP8jSV1Nitd9hrmL-G8GllJW/exec";
 // ⚠️ Doit être exactement la même valeur que CLE_SECRETE dans le script Google
-const CLE_SECRETE = "of5-x7f9o2q4z-154jdy";
+const CLE_SECRETE = "of5-x7f9o2q4z-154jdye";
 
 async function chargerTaches() {
     const liste = document.getElementById("liste-taches");
